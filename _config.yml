@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Chris Teplovs, Ph.D."
+title                    : "Tales from a data scientist"
 title_separator          : "-"
 name                     : "Chris Teplovs"
-description              : "My blog."
+description              : "Stories from my life as a data scientist."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -79,9 +79,9 @@ analytics:
 author:
   name             : "Chris Teplovs"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Maker and teacher."
-  location         : "Ann Arbor, Michigan, USA"
-  email            :
+  bio              : "Data scientist (atypical)."
+  location         : "Ann Arbor, MI, USA"
+  email            : "cteplovs@umich.edu"
   uri              :
   bitbucket        :
   codepen          :
@@ -95,13 +95,13 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "cteplovs"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
-  twitter          :
+  twitter          : "cteplovs"
   vine             :
   weibo            :
   xing             :
