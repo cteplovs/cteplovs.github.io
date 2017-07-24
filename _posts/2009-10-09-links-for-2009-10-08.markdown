@@ -1,0 +1,37 @@
+---
+author: christeplovs
+comments: true
+date: 2009-10-09 04:02:32+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/10/09/links-for-2009-10-08/
+slug: links-for-2009-10-08
+title: links for 2009-10-08
+wordpress_id: 96
+---
+
+  * 
+                
+
+[http://www.info.ucl.ac.be/~pvr/VanRoyChapter.pdf](http://www.info.ucl.ac.be/~pvr/VanRoyChapter.pdf)
+
+
+                
+                
+
+(tags: [functional](http://delicious.com/cteplovs/functional) [programming](http://delicious.com/cteplovs/programming))
+
+
+            
+  * 
+                
+
+[CouchDB emerging as a top choice for offline Web apps | Data Management - InfoWorld](http://www.infoworld.com/d/data-management/couchdb-emerging-top-choice-offline-web-apps-777)
+
+
+                
+                
+
+(tags: [web2.0](http://delicious.com/cteplovs/web2.0) [couchdb](http://delicious.com/cteplovs/couchdb))
+
+
+            

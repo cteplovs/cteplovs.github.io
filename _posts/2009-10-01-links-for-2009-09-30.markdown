@@ -1,0 +1,24 @@
+---
+author: christeplovs
+comments: true
+date: 2009-10-01 04:02:53+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/10/01/links-for-2009-09-30/
+slug: links-for-2009-09-30
+title: links for 2009-09-30
+wordpress_id: 90
+---
+
+  * 
+                
+
+[my first non-trival reduce for couchdb « Contour Line](http://contourline.wordpress.com/2009/01/14/my-first-non-trival-reduce-for-couchdb/)
+
+
+                
+                
+
+(tags: [mapreduce](http://delicious.com/cteplovs/mapreduce) [,](http://delicious.com/cteplovs/%2C) [couchdb](http://delicious.com/cteplovs/couchdb))
+
+
+            

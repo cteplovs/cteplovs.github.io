@@ -1,0 +1,31 @@
+---
+author: christeplovs
+comments: true
+date: 2010-07-07 03:20:31+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2010/07/06/isls2010/
+slug: isls2010
+title: ICLS2010
+wordpress_id: 175
+categories:
+- Work
+tags:
+- chicago
+- conference
+- icls
+- isls
+---
+
+Last week [Nobuko](http://dreff.wordpress.com/), Tatiana and I attended the [ICLS2010](http://isls.org/icls2010/) conference in Chicago. For the record, Snug came along with us but didn't attend the conference.  It was an excellent conference with plenty of opportunities to chat with colleagues who I hadn’t seen in quite some time as well as to meet new ones. For me the conference was hugely successful not only for the networking opportunities but also for ideas about how to move forward on various publication fronts.
+
+For me the conference started on Sunday: I was fortunate to have been invited to represent the Technical Infrastructure Subcommittee at the ISLS Board Retreat. I think we are well on our way to a successful redesign and redeployment of the ISLS web site.
+
+Monday and Tuesday were consumed by the workshop that I helped to organize along with Dan Suthers, Kristine Lund, Carolyn Rose, and Nancy Law. The workshop was the third in a series of workshops that we had organized over the past two years. We are planning a series of publications stemming from our work.
+
+On Wednesday, Jan van Aalst presented a paper that he and I had co-authored (along with Li Sha) on the use of the Knowledge Space Visualizer.
+
+Thursday represented the most challenging day for us, as both Nobuko and I were presenting our paper. Gregory Dyke did an awesome job of entertaining Tatiana (ours, not his) while we presented. Afterwards, we were told that we “worked well together” by an audience member.
+
+On Tuesday, Wednesday and Thursday the conference hosted receptions that were coincident with poster sessions. All three were excellent, but in very different ways. Tuesday’s reception afforded us the opportunity to chat with Keith Sawyer, as well as touch base with colleagues including my external examiner, Allan Collins. Wednesday’s reception saw us having an extended chat with Peter Reimann, and Thursday’s reception was bittersweet with news of a colleague’s loss.
+
+We headed home Friday, exhausted but exhilarated.

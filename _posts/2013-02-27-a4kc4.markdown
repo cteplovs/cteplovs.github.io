@@ -1,0 +1,108 @@
+---
+author: christeplovs
+comments: true
+date: 2013-02-27 17:00:34+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2013/02/27/a4kc4/
+slug: a4kc4
+title: 'Analytics for Knowledge Creation (A4KC) Part IV: Visual Representations'
+wordpress_id: 331
+categories:
+- Work
+tags:
+- A4KC
+- LearningAnalytics
+- visualization
+---
+
+The previous post in this series saw the transformation of raw JSON data into something that could be analysed using the Python pandas data analysis toolkit. We got to the point where we got a crosstab that revealed patterns of thinking scaffold use by students in a class. Or did it? Poring over the output might yield some insights, but it's pretty difficult to see what's going on. It's time to look at how we might visualize the results. There are many ways to visualize a crosstab. Small multiples or lattice graphs are often used but I'm just going to use colour to highlight the cells in the table that have extreme values. I'm also going to do it two ways: the low-cost, most-people-already-have-the-software way (Excel) and the gee-how'd-ya-do-that way using Tableau.
+
+Let's return to the script that I used to generate the CSV output in the last post and review the code near the end where we export the data as a CSV file:
+
+[sourcecode]
+scaffolds_crosstab = pd.crosstab(scaffolds.owner,scaffolds.text,margins=True)
+scaffolds_crosstab.to_csv('scaffolds_crosstab.csv')
+[/sourcecode]
+
+
+That's going to write out a file (called 'scaffolds_crosstab.csv') that looks like:
+`
+owner,A better theory,Evidence,I need to understand,My theory,New information,Putting our knowledge together,Resource,All
+Andy,1,1,0,3,2,0,0,7
+Harvie,0,0,1,4,0,0,0,5
+Jill,0,2,3,6,4,0,1,16
+Kassandra,1,0,4,4,5,0,0,14
+Katy,0,0,2,1,1,0,0,4
+Kaye,0,0,0,5,3,0,0,8
+Lyn,0,0,2,8,4,0,0,14
+Marion,1,0,1,2,0,1,0,5
+Maybelle,0,0,3,5,6,0,0,14
+Merlin,0,0,1,2,2,0,0,5
+Michelle,0,0,1,0,0,0,0,1
+Moreen,0,1,2,3,4,0,1,11
+Panda,0,2,0,4,1,0,0,7
+Quinton,0,0,0,2,1,0,0,3
+Ravenna,0,0,2,4,3,0,0,9
+Sawyer,0,0,3,2,3,0,0,8
+Stanford,0,0,1,0,2,0,0,3
+Steven,0,0,1,2,6,0,0,9
+Tayler,0,1,2,3,4,1,0,11
+Todd,0,0,2,1,1,0,0,4
+Viviette,0,2,2,4,5,0,0,13
+Yasmine,1,1,0,0,5,0,0,7
+Zoie,1,0,5,2,10,1,0,19
+All,5,10,38,67,72,3,2,197
+`
+We could, alternatively, written the file out to an Excel file with
+
+[sourcecode]
+scaffolds_crosstab.to_excel('scaffolds_crosstab.xls')
+[/sourcecode]
+
+but that would have been more difficult show the contents of ;) 
+
+But in any case you can then open the file with Excel and you'll get something that looks like the first image below.
+
+[![Screen Shot 2013-02-26 at 10.45.38 PM](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-45-38-pm.png?w=300)](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-45-38-pm.png)
+
+[![Screen Shot 2013-02-26 at 10.46.49 PM](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-46-49-pm.png?w=300)](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-46-49-pm.png)
+
+[![Screen Shot 2013-02-26 at 10.47.08 PM](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-47-08-pm.png?w=300)](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-47-08-pm.png)
+
+[![Screen Shot 2013-02-26 at 10.47.24 PM](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-47-24-pm.png?w=300)](http://christeplovs.files.wordpress.com/2013/02/screen-shot-2013-02-26-at-10-47-24-pm.png)
+
+You can then use Conditional Formatting to apply a rule to shade the values (the higher the value, the more intense the colour) (second image on the left) and the results should look something like the third image to the left.
+
+You can apply similar rules to the row and column totals, tidy up the column widths and formatting and get something that looks like the fourth image to the left.
+
+So that's about all there is to it, and you've created a simple visualization that reveals some patterns of usage of thinking scaffolds by the students.
+
+But let's say you were also interested in looking at how the use of scaffolds unfolded over time.  We could, as mentioned above, use small multiples if you had a really good sense of what the time intervals should be.  But let's say we wanted to make this a bit more interactive.  That's where [Tableau](http://tableausoftware.com/) comes in handy.
+
+
+
+Tableau allows you to create visualizations like the following:
+
+
+
+
+
+[![Who used which thinking scaffolds when? ](http://public.tableausoftware.com/static/images/Sc/Scaffolds2/Dashboard1/1_rss.png)](http://public.tableausoftware.com/views/Scaffolds2/Dashboard1)
+
+
+
+
+
+Go ahead and check out that visualization.  You can change the date constraints, and you can do interesting things with rows and columns (like sort them).  So you can easily explore your data... or get others to explore it for you!
+
+
+
+Tableau software isn't inexpensive but it's a truly remarkable piece of software for data scientists who need to get high-quality dashboards to their clients in short time frames.
+
+
+
+So there we have it:  getting from raw data to highly interactive visualizations in four easy steps!  But wait, there's more: all we've done so far is show patterns of scaffold use.  I'm interested in the relationship between those scaffolds and the content of the postings.
+
+
+
+Up next: a return to Python for some text mining.

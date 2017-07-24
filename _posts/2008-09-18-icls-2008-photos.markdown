@@ -1,0 +1,17 @@
+---
+author: christeplovs
+comments: true
+date: 2008-09-18 11:00:00+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2008/09/18/icls-2008-photos/
+slug: icls-2008-photos
+title: ICLS 2008 Photos
+wordpress_id: 41
+tags:
+- conferences
+- icls2008
+---
+
+I have finally gotten around to uploading a few photos from the [ICLS 2008](http://www.isls.org/icls2008/) conference held in [Utrecht](http://maps.google.com/maps?hl=en&client=firefox-a&rls=org.mozilla:en-US:official&hs=2Rh&q=utrecht,+nl&um=1&ie=UTF-8&sa=X&oi=geocode_result&resnum=1&ct=title) this past June.  The highlights included the [workshop on Interaction Analysis](http://engaged.hnlc.org/story_comments/list/12).  
+  
+

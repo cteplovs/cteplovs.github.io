@@ -1,0 +1,37 @@
+---
+author: christeplovs
+comments: true
+date: 2009-09-03 04:02:26+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/09/03/links-for-2009-09-02/
+slug: links-for-2009-09-02
+title: links for 2009-09-02
+wordpress_id: 85
+---
+
+  * 
+                
+
+[Re: help regarding couchdb python view server](http://mail-archives.apache.org/mod_mbox/couchdb-user/200812.mbox/<39FCE8C0-888D-48F1-82EC-F3AE81E31872@gmail.com>)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb) [viewserver](http://delicious.com/cteplovs/viewserver))
+
+
+            
+  * 
+                
+
+[elusivesnark: Computing TF-IDF with CouchDB and Python](http://www.elusivesnark.com/2009/08/computing-tf-idf-with-couchdb-and.html)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb) [tfidf](http://delicious.com/cteplovs/tfidf))
+
+
+            

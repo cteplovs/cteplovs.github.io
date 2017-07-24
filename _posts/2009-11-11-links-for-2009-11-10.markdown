@@ -1,0 +1,29 @@
+---
+author: christeplovs
+comments: true
+date: 2009-11-11 04:02:19+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/11/11/links-for-2009-11-10/
+slug: links-for-2009-11-10
+title: links for 2009-11-10
+wordpress_id: 101
+---
+
+  * 
+                
+
+[ComboBoxModel (Java Platform SE 7 b66)](http://java.sun.com/javase/7/docs/api/javax/swing/ComboBoxModel.html)
+
+
+                
+                
+            
+  * 
+                
+
+[JSR-295 - binding to a ComboBoxModel example: msg#00321 java.jdnc.general](http://osdir.com/ml/java.jdnc.general/2007-05/msg00321.html)
+
+
+                
+                
+            

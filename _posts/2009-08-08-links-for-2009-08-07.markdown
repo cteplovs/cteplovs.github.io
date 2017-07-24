@@ -1,0 +1,133 @@
+---
+author: christeplovs
+comments: true
+date: 2009-08-08 04:03:03+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/08/08/links-for-2009-08-07/
+slug: links-for-2009-08-07
+title: links for 2009-08-07
+wordpress_id: 79
+---
+
+  * 
+                
+
+[Chris Teplovs](http://chris.ikit.org/)
+
+
+                
+                
+            
+  * 
+                
+
+[From Del.icio.us to WordPress: How to automatically post daily links at theory.isthereason](http://theory.isthereason.com/?p=499)
+
+
+                
+                
+
+(tags: [wordpress](http://delicious.com/cteplovs/wordpress) [del.icio.us](http://delicious.com/cteplovs/del.icio.us))
+
+
+            
+  * 
+                
+
+[Concurrent](http://christeplovs.wordpress.com/)
+
+
+                
+                
+            
+  * 
+                
+
+[DIFRWEAR](http://www.difrwear.com/)
+
+
+                
+                
+
+(tags: [data](http://delicious.com/cteplovs/data) [technology](http://delicious.com/cteplovs/technology) [rfid](http://delicious.com/cteplovs/rfid))
+
+
+            
+  * 
+                
+
+[Software Carpentry: July 2009 Guest Speakers](http://software-carpentry.org/science20/index.html)
+
+
+                
+                
+
+(tags: [software](http://delicious.com/cteplovs/software) [science2.0](http://delicious.com/cteplovs/science2.0))
+
+
+            
+  * 
+                
+
+[Working with HABTM Form Data in CakePHP | Mr PHP](http://mrphp.com.au/code/code-category/cakephp/cakephp-1-2/working-habtm-form-data-cakephp)
+
+
+                
+                
+
+(tags: [cakephp](http://delicious.com/cteplovs/cakephp) [php](http://delicious.com/cteplovs/php) [habtm](http://delicious.com/cteplovs/habtm))
+
+
+            
+  * 
+                
+
+[cakephp/behaviors/cloud at master from felixge's debuggable-scraps - GitHub](http://github.com/felixge/debuggable-scraps/tree/master/cakephp/behaviors/cloud)
+
+
+                
+                
+
+(tags: [cakephp](http://delicious.com/cteplovs/cakephp) [tag](http://delicious.com/cteplovs/tag))
+
+
+            
+  * 
+                
+
+[Create tag cloud](http://www.roscripts.com/Create_tag_cloud-71.html)
+
+
+                
+                
+
+(tags: [tagcloud](http://delicious.com/cteplovs/tagcloud) [php](http://delicious.com/cteplovs/php))
+
+
+            
+  * 
+                
+
+[CakeBin : Pastes](http://bin.cakephp.org/saved/31267)
+
+
+                
+                
+
+(tags: [cakephp](http://delicious.com/cteplovs/cakephp) [php](http://delicious.com/cteplovs/php) [tagcloud](http://delicious.com/cteplovs/tagcloud))
+
+
+            
+  * 
+                
+
+[Tagcloud Helper (Articles) | The Bakery, Everything CakePHP](http://bakery.cakephp.org/articles/view/tagcloud-helper)
+
+
+                
+                
+
+(tags: [cakephp](http://delicious.com/cteplovs/cakephp) [php](http://delicious.com/cteplovs/php))
+
+
+            

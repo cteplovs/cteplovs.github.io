@@ -1,0 +1,141 @@
+---
+author: christeplovs
+comments: true
+date: 2013-03-08 14:00:23+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2013/03/08/a4kc5/
+slug: a4kc5
+title: 'A4KC: Part V: Using python pandas for time series analysis in learning analytics'
+wordpress_id: 368
+categories:
+- Work
+tags:
+- A4KC
+- LearningAnalytics
+- pandas
+- visualization
+---
+
+In [Part I](http://christeplovs.wordpress.com/2013/02/22/a4kc1/) of this "Analytics for Knowledge Creation" (A4KC) series, I introduced data extraction from a specialized online discourse environment, which I explained in more detail in [Part II](http://christeplovs.wordpress.com/2013/02/24/a4kc2/).  I used pandas in [Part III](http://christeplovs.wordpress.com/2013/02/26/a4kc3/) to wrangle the data into a more usable format and create simple crosstabs, which I then visualized using Excel and Tableau in [Part IV](http://christeplovs.wordpress.com/2013/02/27/a4kc4/).  I had originally planned to delve into text mining in this post, but I thought I would do a quick sanity check of the data to make sure everything looked ok.  I was interested in taking a quick look at how scaffolds are used over time, with the hunch that scaffold use faded over time.  Usually this sort of analysis requires even more data wrangling: getting events that occur sporadically into a form that corresponds to days or weeks can be challenging (ok, days might not be that bad, but weeks certainly are).  
+
+This is remarkably easy to do using pandas!
+
+To recap and to simplify things, I now have data that consists of the following rows:
+`
+:,#,Object,created,noteid,owner,text,view
+0,6512,support,2003-04-11 11:11:43,15914,Yasmine,New information,PS: Colours of Light & Rainbows
+1,6515,support,2003-04-11 11:11:43,15914,Yasmine,Evidence,PS: Colours of Light & Rainbows
+2,6511,support,2003-04-01 13:42:01,15633,Viviette,I need to understand,PS: Colours of Light & Rainbows
+...
+`
+The first row provides the column names: a sequence number, the scaffold ID number, the type of object (always "support" in this example), when the posting was created, the posting's ID number, the creator, the text of the scaffold, and the view (forum) of which the posting is a member.
+
+I load the data using a python script called "kf_load.py" in IPython:
+
+`
+Python 2.7.2 (default, Jun 20 2012, 16:23:33) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 0.13.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+%guiref   -> A brief reference about the graphical user interface.
+
+In [1]: %run kf_load.py
+`
+This loads the data into DataFrame called 'scaffolds':
+`
+In [2]: scaffolds
+Out[2]: 
+
+Int64Index: 197 entries, 0 to 196
+Data columns:
+#          197  non-null values
+Object     197  non-null values
+created    197  non-null values
+noteid     197  non-null values
+owner      197  non-null values
+text       197  non-null values
+view       197  non-null values
+dtypes: datetime64[ns](1), int64(2), object(4)
+`
+The data are indexed by their sequence number, and I want to reset that so they're indexed by the creation date.  To do so I set the index property of the DataFrame explicitly (note:  do not use the 'reindex' command, which does something completely different):
+`
+In [3]: scaffolds.index=scaffolds['created']
+`
+I can now use pandas' time series resampling method to resample the postings by day, taking the count of postings on each day:
+`
+In [4]: scaffolds_byday = scaffolds.resample('D','count')
+`
+and plot the results (this is a rough plot -- the x-axis is incorrectly labelled):
+`
+In [5]: plot(scaffolds_byday)
+Out[5]: [<matplotlib.lines.Line2D at 0x10fb073d0>]
+`
+[![scaffolds_byday](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday.png)
+
+Now for the real pandas timeseries magic: I can easily resample by week (seven days, or "7D" below):
+`
+In [6]: scaffolds_byweek = scaffolds.resample('7D','count')
+
+In [7]: plot(scaffolds_byweek)
+Out[7]: [<matplotlib.lines.Line2D at 0x10fb2eb50>]
+`
+[![scaffolds_byweek](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek.png)
+
+
+I can similarly look at cumulative usage over time:
+`
+plot(cumsum(scaffolds_byday))
+Out[72]: [<matplotlib.lines.Line2D at 0x10fa1cb90>]
+`
+[![scaffolds_cumsum_byweek](http://christeplovs.files.wordpress.com/2013/03/scaffolds_cumsum_byweek.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_cumsum_byweek.png)
+`
+plot(cumsum(scaffolds_byweek))
+Out[72]: [<matplotlib.lines.Line2D at 0x10fa1cb90>]
+`
+[![scaffolds_cumsum_byday](http://christeplovs.files.wordpress.com/2013/03/scaffolds_cumsum_byday.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_cumsum_byday.png)
+
+but I don't think the cumulative graphs are particularly useful.
+
+I had a hunch that it might be interesting to look at how different scaffolds were used over time (specifically, the "My theory", "I need to understand" and "New information" scaffolds). Here they are by day:
+`
+plot(scaffolds.ix[scaffolds.text == 'My theory'].resample('D','count'))
+Out[66]: [<matplotlib.lines.Line2D at 0x10ef8ed50>]
+
+[![scaffolds_byday_mytheory](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday_mytheory.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday_mytheory.png)
+
+plot(scaffolds.ix[scaffolds.text == 'I need to understand'].resample('D','count'))
+Out[67]: [<matplotlib.lines.Line2D at 0x10ef6d410>]
+
+[![scaffolds_byday_intu](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday_intu.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday_intu.png)
+
+plot(scaffolds.ix[scaffolds.text == 'New information'].resample('D','count'))
+Out[68]: [<matplotlib.lines.Line2D at 0x110c25990>]
+
+[![scaffolds_byday_newinfo](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday_newinfo.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byday_newinfo.png)
+`
+and also by week:
+`
+plot(scaffolds.ix[scaffolds.text == 'My theory'].resample('7D','count'))
+Out[69]: [<matplotlib.lines.Line2D at 0x110c8de10>]
+
+[![scaffolds_byweek_mytheory](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek_mytheory.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek_mytheory.png)
+
+plot(scaffolds.ix[scaffolds.text == 'I need to understand'].resample('7D','count'))
+Out[70]: [<matplotlib.lines.Line2D at 0x110c7e350>]
+
+[![scaffolds_byweek_intu](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek_intu.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek_intu.png)
+
+plot(scaffolds.ix[scaffolds.text == 'New information'].resample('7D','count'))
+Out[71]: [<matplotlib.lines.Line2D at 0x10f9ee610>]
+
+[![scaffolds_byweek_newinfo](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek_newinfo.png?w=300)](http://christeplovs.files.wordpress.com/2013/03/scaffolds_byweek_newinfo.png)
+`
+Now I think I'm on to something!  I can see that the "My theory" scaffolds tend to occur near the beginning, and then some time later there's a surge in "I need to understand" followed soon after by "New information".
+
+So there's a brief introduction to how we can use pandas to help out with chronological learning analytics.  
+
+Next up (really!): text mining.

@@ -1,0 +1,93 @@
+---
+author: christeplovs
+comments: true
+date: 2013-02-22 10:00:01+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2013/02/22/a4kc1/
+slug: a4kc1
+title: 'Analytics for Knowledge Creation (A4KC) Part I: Data extraction'
+wordpress_id: 280
+categories:
+- Work
+tags:
+- A4KC
+- KnowledgeForum
+- LearningAnalytics
+---
+
+It's been three years since I last visited [Knowledge Forum](http://en.wikipedia.org/wiki/Knowledge_Forum#Software_features) analytics (and a few years more since some of [my earliest published work](http://ikit.org/~cteplovs/cscl2007-339final2.pdf) on Knowledge Forum analytics), so I was amazed at how easy this seems compared to how terribly difficult it was back then.   
+
+I'm returning to Knowledge Forum analytics for several reasons.  First, I thought that others who are still actively engaged in Knowledge Forum research and development might benefit from tips and tricks to build analytics for it.  Second, I'm still curious to know how the use of scaffolding affects the nature of the discourse.  In [my doctoral thesis](http://hdl.handle.net/1807/24893), I stated:
+
+
+
+<blockquote>Presently, Knowledge Forum is the software that is most tuned to scaffolding the process of knowledge building. This is accomplished through technological affordances that favour those actions that are typical of knowledge creating organizations. The process of scaffolding is made explicit in Knowledge Forum through the use of “thinking types” or scaffold supports that are computer-mediated and customizable. They allow teachers and students to use scaffolds and rubrics flexibly and for students to tag their notes by thinking type (Andrade, 2000; Chuy, Scardamalia, & Bereiter, 2009; Lai & Law, 2006; Law & Wong, 2003). Once text is tagged searches by scaffolds make it possible for students and teachers to find examples. Formative assessment tools can be used to provide feedback regarding patterns of use and help extend student’ repertoires (Scardamalia, et al., 2009). For example, the tools can highlight situations where the community could benefit from the synthesis of ideas. (p.39)</blockquote>
+
+
+
+and
+
+
+
+<blockquote>The most powerful meta-information that can be added to a note is the scaffold support, mentioned above. By default, a newly created Knowledge Forum database starts with two sets of scaffolds: the “theory building” scaffold set and the “opinion” scaffold set. The theory building scaffold set consists of six scaffold supports: “My theory”, “I need to understand”, “New information”, “This theory cannot explain”, “A better theory”, and “Putting our knowledge together”. The opinion scaffold set consists of seven scaffold supports: “Opinion”, “Different opinion”, “Reason”, “Elaboration”, “Evidence”, “Example”, and “Conclusion”. These scaffold supports are designed to be used either in the course of composing a note or after the fact. They are designed to bracket sections of text, images, and multi-media components of notes. Once the contents of a note are marked up using these scaffold supports complex queries can be performed. For example, it is possible to retrieve all instances of “My theory” that contain the word “light”. (p.45)</blockquote>
+
+
+
+However, I feel that I didn't push enough on some analytics around the use of scaffolds in Knowledge Forum.  My data consists of several thousand notes (postings) over the course of several years.  Not "big data" in the grand scheme of data science, but bigger than your average educational study ;).  I have a mountain of data that I think could help us understand how discourse, particularly discourse in support of the creation of new knowledge, unfolds over time and how the process of discourse-based knowledge creation can be scaffolded.  Third, I want to return to some very early work that Marlene Scardamalia and I did on the use of scaffolds.  In 2001, we presented some early results on the authentic assessment of literacy to the National Research Council's Committee on Improving Learning With Information Technology.  We noticed a relationship between the expression of authentic problems (i.e. "real ideas" from students) and the introduction of new information to help understand and address those problems.  Simply put: it seemed that the expression of authentic problems drove the introduction of new ideas.  This early work was done on a small data set and used (tedious) manual coding.  I wonder if we can automate some of the work involved in that research in a way that makes use of the large amount of data I have collected since then, with the hope of better understanding how discourse unfolds, the role that scaffolding plays, and what sort of insights we might gain about how we might improve literacy through the use of educational technology.
+
+This first post in what will hopefully be a series of posts focuses on data extraction using a JSON interface to the data.  First, the script (in python, which you really should be using for most of you data munging):
+
+[sourcecode language="python"]
+import urllib,json
+
+hostname = 'your.host.here'
+port     = 80        # whatever port your server is running on
+dbname   = 'YourDatabaseNameHere'
+username = 'YourUserNameHere'
+password = 'YourPasswordHere'
+viewid   = 123456  # the only tricky part: 
+                   # the ID of a view that acts as a 
+                   # starting point for the extraction
+query = """
+{
+"#" : %d,
+"contains^" :
+{
+ "@": {"ID": true,"all": true},
+ "Object": "view",
+"contains^" :
+        {
+        "@" : { "ID" : true, "all" : true },
+        "Object" : "note",
+        "^supports" : {"@": {"ID" : true, "all" : true}},
+		"^owns" : {"@": {"ID" : true, "all" : true}},
+		"^read" : {"@": {"ID" : true, "all" : true}},
+        }
+}
+}
+""" % viewid
+
+params = urllib.urlencode({'DB':dbname,'username':username,'password':password,'q':query})
+
+f = urllib.urlopen("http://%s:%d/json?%s" % (hostname,port,params))
+
+# Sometimes we get non-JSON-compliant characters from KF so we can replace them
+j = json.loads(f.read().replace("\\x"," ").replace("\\'","'"))
+
+for view in j['Result'][0]['contains^']:
+    print view['titl']
+    for note in view['contains^']:
+        print note.get('titl') or "- no title -"
+        for author in note['^owns']:
+            print "Author: %s" % author.get('fnam') or "- unknown author -"
+        print " ",note.get('text') or "-empty note-"
+        for support in note['^supports']:
+            print "Support: %s" % support.get('text')
+        for readby in note['^read']:
+            print "Read by: %s" % readby.get('fnam') or readby
+
+[/sourcecode]
+
+To run this script, change the parameters at the top of the file.  (You can get the ID of the view you want to start with by examining the URL of the view in "basic" mode.) The script will extract view links from that view, then all the notes from those linked views.  For each note you will see the title, text, authorship and a list of who has read the note.
+
+The next post will detail the seemingly obscure query specification for the database, and then we'll move on to some analytics and representations.

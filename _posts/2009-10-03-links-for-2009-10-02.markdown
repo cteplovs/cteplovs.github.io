@@ -1,0 +1,24 @@
+---
+author: christeplovs
+comments: true
+date: 2009-10-03 04:02:06+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/10/03/links-for-2009-10-02/
+slug: links-for-2009-10-02
+title: links for 2009-10-02
+wordpress_id: 91
+---
+
+  * 
+                
+
+[InformIT: Java Reference Guide > Launch4j](http://www.informit.com/guides/content.aspx?g=java&seqNum=361)
+
+
+                
+                
+
+(tags: [java](http://delicious.com/cteplovs/java) [launch4j](http://delicious.com/cteplovs/launch4j))
+
+
+            

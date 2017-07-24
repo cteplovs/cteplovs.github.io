@@ -1,0 +1,46 @@
+---
+author: christeplovs
+comments: true
+date: 2009-08-11 04:03:00+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/08/11/links-for-2009-08-10/
+slug: links-for-2009-08-10
+title: links for 2009-08-10
+wordpress_id: 80
+---
+
+  * 
+                
+
+[Launch4j - Cross-platform Java executable wrapper](http://launch4j.sourceforge.net/)
+
+
+                
+                
+
+(tags: [osx](http://delicious.com/cteplovs/osx) [software](http://delicious.com/cteplovs/software) [java](http://delicious.com/cteplovs/java) [tools](http://delicious.com/cteplovs/tools))
+
+
+            
+  * 
+                
+
+[Bringing your Java Application to Mac OS X](http://java.sun.com/developer/technicalArticles/JavaLP/JavaToMac3/)
+
+
+                
+                
+
+(tags: [osx](http://delicious.com/cteplovs/osx) [software](http://delicious.com/cteplovs/software) [macosx](http://delicious.com/cteplovs/macosx) [java](http://delicious.com/cteplovs/java) [mac](http://delicious.com/cteplovs/mac))
+
+
+            
+  * 
+                
+
+[Img2icns | making icons can't be easier!](http://www.img2icnsapp.com/)
+
+
+                
+                
+            

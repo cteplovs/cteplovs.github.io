@@ -1,0 +1,19 @@
+---
+author: christeplovs
+comments: true
+date: 2007-11-06 19:40:00+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2007/11/06/tab-sweep/
+slug: tab-sweep
+title: Tab sweep
+wordpress_id: 32
+---
+
+[“Welcome to dork talk”](http://stephenfry.com/blog/?p=22) by Stephen Fry  
+[Sun SPARC Enterprise T5120 Server](http://www.sun.com/servers/coolthreads/t5120/) - the look of machines to come?  
+[Impact of social data visualization](http://infosthetics.com/archives/2007/10/the_impact_of_social_data_visualization_infovis_workshop.html): Fernanda Viégas blogging at [Infovis'07](http://conferences.computer.org/infovis/infovis2007/)  
+[Skim](http://skim-app.sourceforge.net/index.html) - a great PDF viewer  
+[Scratch](http://scratch.mit.edu/about) - worth looking at again  
+[Publications](http://www.research.ibm.com/visual/publications.html) from the [Visual Communication Lab](http://www.research.ibm.com/visual/index.html)  
+[GUESS](http://graphexploration.cond.org/index.html) - The Graph Exploration System  
+[Bernie Hogan](http://individual.utoronto.ca/berniehogan/about.html) Ph.D. student, Netlab (Barry Wellman) [Egotistics](http://egotistics.cvs.sourceforge.net/egotistics/)

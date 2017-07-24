@@ -1,0 +1,24 @@
+---
+author: christeplovs
+comments: true
+date: 2009-08-13 04:02:37+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/08/13/links-for-2009-08-12/
+slug: links-for-2009-08-12
+title: links for 2009-08-12
+wordpress_id: 82
+---
+
+  * 
+                
+
+[Lattice - Multivariate Data Visualization with R - Figures and Code](http://lmdvr.r-forge.r-project.org/figures/figures.html)
+
+
+                
+                
+
+(tags: [r](http://delicious.com/cteplovs/r))
+
+
+            

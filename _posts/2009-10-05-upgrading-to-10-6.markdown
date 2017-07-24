@@ -1,0 +1,21 @@
+---
+author: christeplovs
+comments: true
+date: 2009-10-05 04:03:19+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/10/05/upgrading-to-10-6/
+slug: upgrading-to-10-6
+title: Upgrading to 10.6
+wordpress_id: 92
+tags:
+- osx
+---
+
+I finally took the plunge and upgraded my laptop to OS X 10.6.  Whereas the upgrade itself was straight-forward there have been some follow-up issues. 
+
+1. QuickSilver needed to be upgraded and then the Plugins folder and plist had to be deleted.
+2. Growl needed to be updated.
+3. Mail needed to be configured for Exchange, which was a bit of a mystery process given that UofT hasn't yet posted instructions on how to do that.
+4. iCal now syncs with Google Calendar and handles delegated calendars properly.
+
+Now it's time to start looking at upgrading Eclipse.

@@ -1,0 +1,22 @@
+---
+author: christeplovs
+comments: true
+date: 2010-09-04 20:22:59+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2010/09/04/france/
+slug: france
+title: 'France I: Going to Paris'
+wordpress_id: 176
+categories:
+- Work
+tags:
+- france
+---
+
+I have been offered and have accepted a visiting professorship at Ecole Normale Superieur de Cachan for September and October, 2010.  I will be working with Christophe Reffay and Eric Bruillard on extending the Knowledge Space Visualizer (part of my doctoral dissertation) to work with other online data.  We will be working under a tight timeline:  two months is not much time to complete the work we have set out for ourselves.  In essence, we are planning to explore the relationship between social and semantic networks in online communities.  We will be building on Christophe's 2003 paper (Reffay & Chanier, 2003) by exploring, in particular, the role of cohesion in semantic networks.
+
+Nobuko, Tatiana and I will be living at Villa Louis Pasteur in the 5th arrondissement in the Latin Quarter of Paris.  It is remarkably close to almost everything we want to see in Paris.
+
+I hope to use this series of blog postings to chronicle this adventure.
+
+Reffay, C., & Chanier, T. (2003). How social network analysis can help to measure cohesion in collaborative distance-learning. In B. Wason, S. Ludvigson & U. Hoppe (Eds.), Designing for change in networked learning.  Proceedings of the international conference on Computer Supported Collaborative Learning 2003 (pp. 343-352). Bergen, Norway: Kluwer Academic Publishers.)

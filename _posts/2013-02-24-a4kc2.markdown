@@ -1,0 +1,140 @@
+---
+author: christeplovs
+comments: true
+date: 2013-02-24 16:20:50+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2013/02/24/a4kc2/
+slug: a4kc2
+title: 'Analytics for Knowledge Creation (A4KC) Part II: Zoolib tuplebase queries'
+wordpress_id: 300
+categories:
+- Work
+tags:
+- A4KC
+- KnowledgeForum
+---
+
+One of the joys of being a data scientist is figuring out how to access data that reside in different databases, formats, and so on.  Some systems use widely-adopted software (like MySQL, or Excel), others use less common ones (NoSQL databases like CouchDB and MongoDB) and others still use highly specialized software to accomplish their tasks.  Knowledge Forum uses a simple yet sophisticated database called a tuplebase, based on the [Zoolib cross-platform open-source library](http://sourceforge.net/projects/zoolib/).  Here's the text representation of a newly created Knowledge Forum database:
+[sourcecode]
+// Version 1.0
+// Next unused ID: 
+0x26 /*38*/
+0x1 /*1*/:	{ Object = "group"; titl = "Sample Group"; fsiz = int32(0); }
+0x2 /*2*/:	{ Object = "author"; fnam = "Dr."; lnam = "Admin"; unam = "dradmin"; pass = "secret"; type = "manager"; stat = "active"; }
+0x3 /*3*/:	{ Link = "contains"; from = ID(0x1) /*1*/; to = ID(0x2) /*2*/; }0x4 /*4*/:	{ Object = "author"; fnam = "Anonymous"; lnam = "Anonymous"; unam = "anonymous"; type = "anonymous"; stat = "deleted"; }
+0x5 /*5*/:	{ Object = "scaffold"; text = " Theory Building"; }
+0x6 /*6*/:	{ Object = "support"; text = "My Theory"; }
+0x7 /*7*/:	{ Object = "support"; text = "I need to understand"; }
+0x8 /*8*/:	{ Object = "support"; text = "New information"; }
+0x9 /*9*/:	{ Object = "support"; text = "This theory cannot explain"; }
+0xA /*10*/:	{ Object = "support"; text = "A better theory"; }
+0xB /*11*/:	{ Object = "support"; text = "Putting our knowledge together"; }0xC /*12*/:	{ Link = "contains"; from = ID(0x5) /*5*/; to = ID(0x6) /*6*/; }0xD /*13*/:	{ Link = "contains"; from = ID(0x5) /*5*/; to = ID(0x7) /*7*/; }0xE /*14*/:	{ Link = "contains"; from = ID(0x5) /*5*/; to = ID(0x8) /*8*/; }0xF /*15*/:	{ Link = "contains"; from = ID(0x5) /*5*/; to = ID(0x9) /*9*/; }0x10 /*16*/:	{ Link = "contains"; from = ID(0x5) /*5*/; to = ID(0xA) /*10*/; }
+0x11 /*17*/:	{ Link = "contains"; from = ID(0x5) /*5*/; to = ID(0xB) /*11*/; }            
+0x12 /*18*/:	{ Object = "scaffold"; text = "Opinion"; }
+0x13 /*19*/:	{ Object = "support"; text = "Opinion"; }
+0x14 /*20*/:	{ Object = "support"; text = "Different opinion"; }
+0x15 /*21*/:	{ Object = "support"; text = "Reason"; }
+0x16 /*22*/:	{ Object = "support"; text = "Elaboration"; }
+0x17 /*23*/:	{ Object = "support"; text = "Evidence"; }
+0x18 /*24*/:	{ Object = "support"; text = "Example"; }
+0x19 /*25*/:	{ Object = "support"; text = "Conclusion"; }
+0x1A /*26*/:	{ Link = "contains"; from = ID(0x12) /*18*/; to = ID(0x13) /*19*/; }
+0x1B /*27*/:	{ Link = "contains"; from = ID(0x12) /*18*/; to = ID(0x14) /*20*/; }
+0x1C /*28*/:	{ Link = "contains"; from = ID(0x12) /*18*/; to = ID(0x15) /*21*/; }
+0x1D /*29*/:	{ Link = "contains"; from = ID(0x12) /*18*/; to = ID(0x16) /*22*/; }
+0x1E /*30*/:	{ Link = "contains"; from = ID(0x12) /*18*/; to = ID(0x17) /*23*/; }
+0x1F /*31*/:	{ Link = "contains"; from = ID(0x12) /*18*/; to = ID(0x18) /*24*/; }
+0x20 /*32*/:	{ Link = "contains"; from = ID(0x12) /*18*/; to = ID(0x19) /*25*/; }
+0x21 /*33*/:    { Object = "view"; titl = "Welcome"; perm = "public"; lock = "unlocked"; stat = "active"; crea = time(1361803606.290261) /*2013-02-25Z14:46:46.290261*/; modi = time(1361803606.2902739) /*2013-02-25Z14:46:46.2902739*/; revi = int32(0); hdht = int32(0); hdsb = int32(0); level = int32(1); }
+0x22 /*34*/:	{ Link = "owns"; from = ID(0x2) /*2*/; to = ID(0x21) /*33*/; }
+0x23 /*35*/:	{ Link = "owns"; from = ID(0x1) /*1*/; to = ID(0x5) /*5*/; }
+0x24 /*36*/:	{ Link = "owns"; from = ID(0x1) /*1*/; to = ID(0x12) /*18*/; }
+0x25 /*37*/:	{ Link = "startup"; from = ID(0x1) /*1*/; to = ID(0x21) /*33*/; }
+[/sourcecode]
+
+For now, I'm just going to share a slightly edited version of the instructions for querying Knowledge Forum via the JSON interface that was provided by Andrew Green, the system architect for Knowledge Forum.
+
+The endpoint is "json", which accepts a JSON-syntax query as the q param of a GET or POST, and returns a application/json response.
+
+An object with values is treated as a simple template:
+
+`  { "Object" : "note" }`
+
+returns an entry for each tuple with an "Object" property whose value is the string "note".
+
+In all cases the presence of a template property will cause each result to include that property, so the request with a wildcard for the "titl" property will cause that property to show up in each result.
+`  { "Object" : "note", "titl" : null }`
+
+Appending a tilde (~) to a property name causes the matching to be done as a 'string contains', with strength one. So
+
+`  { "Object" : "note", "titl~" : "knowledge" }`
+
+will return note tuples with "knowledge" in their "titl" property.
+
+"#" is the name of a pseudo property, the ID of the tuple in question. So
+
+`  { "Object" : "note", "#" : null }`
+
+will return the all note tuples with their IDs included as the property named "#", and
+
+`  { "Object" : "note", "#" : 27 }`
+
+will return all note tuples whose "#" property matches 27 (ie at most one).
+
+
+There is one other pseudo property name (@). "@"'s value should be a tuple containing parameters to influence how the results should be handled.
+
+`  { "@" : { "ID" : true }, "Object" : "note" }`
+
+will return all note tuples and will include the "#" pseudo property in each (so it's probably superfluous).
+
+`  { "@" : { "all" : true }, "Object" : "note" }`
+
+will return all note tuples and usefully will include every property in each tuple, whether it's listed explicitly in the template or not.
+
+`  { "@" : { "ID" : true, "all" : true }, "Object" : "note" }`
+
+does the same, but also includes the "#" pseudo proerty. You'll see this idiom used a lot in the examples at the end of this document.
+
+The other "@" parameter is "max" -- this is a number indicating the maximum number of matching tuples to return. So
+
+`  { "@" : { "ID" : true, "all" : true, "max" : 10 }, "Object" : "note" }`
+
+will return no more than ten entries. In the prototype max was hard-coded as one hundred -- that's no longer the case, so be careful.
+
+
+Moving on to links here's an example from my September message:
+
+`  { "Object" : "author", "owns^" : null }`
+
+this returns an entry for each author, each of which has a vector property called "owns^" containing an entry for each tuple that is on the "to" end of any "owns" link tuple whose "from" link is the author tuple.
+
+As before, the null value for "owns^" means that there will be an empty tuple for each result. Using our new "@" property:
+
+`  { "Object" : "author", "owns^" : { "@" : { "all" : true } } }`
+
+will insert the full tuple in the appropriate "owns^" vector entry.
+
+Doing this:
+
+`  { "@" : { "max": 10 }, "Object" : "author", "owns^" : { "@" : { "all" : true, "max" : 100 } } }`
+
+or the more legible:
+
+`
+  {
+  "@" : { "max": 10 },
+  "Object" : "author",
+  "owns^" : { "@" : { "all" : true, "max" : 100 } }
+  }
+`
+
+will return no more than ten authors, and for each of those no more than one hundred owned things.
+
+Putting the (^) at the other end of the property name flips the sense, so we're looking for Link tuples whose "to" matches the ID of the outer tuple, and filling the vector with the tuples whose IDs are the "from" vector, so
+
+`  { "Object" : "author", "^contains" : { "@" : { "all" : true, "ID" : true } } }`
+
+will find every author and everything that contains an author (groups generally).
+
+And that's about all there is to it!

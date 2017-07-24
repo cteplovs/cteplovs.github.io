@@ -1,0 +1,20 @@
+---
+author: christeplovs
+comments: true
+date: 2009-11-04 04:05:06+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/11/04/links-for-2009-11-03/
+slug: links-for-2009-11-03
+title: links for 2009-11-03
+wordpress_id: 100
+---
+
+  * 
+                
+
+[Missing Ruby headers after Snow Leopard upgrade · Fingertips](http://www.fngtps.com/2009/08/missing-ruby-headers-after-snow-leopard-upgrade)
+
+
+                
+                
+            

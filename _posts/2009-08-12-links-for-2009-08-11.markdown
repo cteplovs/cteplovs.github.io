@@ -1,0 +1,24 @@
+---
+author: christeplovs
+comments: true
+date: 2009-08-12 04:03:04+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/08/12/links-for-2009-08-11/
+slug: links-for-2009-08-11
+title: links for 2009-08-11
+wordpress_id: 81
+---
+
+  * 
+                
+
+[Re: [R] plot contour map for irregular data points from Andre Jung on 2007-09-13 (R help archive)](http://tolstoy.newcastle.edu.au/R/e2/help/07/09/25428.html)
+
+
+                
+                
+
+(tags: [r](http://delicious.com/cteplovs/r))
+
+
+            

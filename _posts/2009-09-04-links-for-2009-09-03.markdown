@@ -1,0 +1,59 @@
+---
+author: christeplovs
+comments: true
+date: 2009-09-04 04:02:09+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/09/04/links-for-2009-09-03/
+slug: links-for-2009-09-03
+title: links for 2009-09-03
+wordpress_id: 86
+---
+
+  * 
+                
+
+[Working with RestfulX Models - restfulx_framework - GitHub](http://wiki.github.com/dima/restfulx_framework/working-with-restfulx-models)
+
+
+                
+                
+            
+  * 
+                
+
+[CouchDB Joins](http://www.davispj.com/2008/10/02/couchdb-joins.html)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb) [joins](http://delicious.com/cteplovs/joins))
+
+
+            
+  * 
+                
+
+[about:cmlenz - CouchDB "Joins"](http://www.cmlenz.net/archives/2007/10/couchdb-joins)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb) [join](http://delicious.com/cteplovs/join) [mapreduce](http://delicious.com/cteplovs/mapreduce))
+
+
+            
+  * 
+                
+
+[dima's soup at master - GitHub](http://github.com/dima/soup/tree/master)
+
+
+                
+                
+
+(tags: [ruby](http://delicious.com/cteplovs/ruby) [couchdb](http://delicious.com/cteplovs/couchdb) [air](http://delicious.com/cteplovs/air))
+
+
+            

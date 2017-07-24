@@ -1,0 +1,63 @@
+---
+author: christeplovs
+comments: true
+date: 2009-09-30 04:03:19+00:00
+layout: post
+link: https://christeplovs.wordpress.com/2009/09/30/links-for-2009-09-29/
+slug: links-for-2009-09-29
+title: links for 2009-09-29
+wordpress_id: 89
+---
+
+  * 
+                
+
+[HTTP_view_API - Couchdb Wiki](http://wiki.apache.org/couchdb/HTTP_view_API)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb))
+
+
+            
+  * 
+                
+
+[How do I perform a parameterized query on CouchDB - Stack Overflow](http://stackoverflow.com/questions/1203071/how-do-i-perform-a-parameterized-query-on-couchdb)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb) [search](http://delicious.com/cteplovs/search))
+
+
+            
+  * 
+                
+
+[EntityRelationship - Couchdb Wiki](http://wiki.apache.org/couchdb/EntityRelationship)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb) [database](http://delicious.com/cteplovs/database) [joins](http://delicious.com/cteplovs/joins))
+
+
+            
+  * 
+                
+
+[HTTP_Bulk_Document_API - Couchdb Wiki](http://wiki.apache.org/couchdb/HTTP_Bulk_Document_API)
+
+
+                
+                
+
+(tags: [couchdb](http://delicious.com/cteplovs/couchdb) [database](http://delicious.com/cteplovs/database) [json](http://delicious.com/cteplovs/json))
+
+
+            
