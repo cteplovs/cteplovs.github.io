@@ -2,7 +2,7 @@
 author: christeplovs
 comments: true
 date: 2016-09-08 02:21:02+00:00
-layout: post
+layout: single
 link: https://christeplovs.wordpress.com/2016/09/07/biking-to-work-when-you-live-50-miles-away/
 slug: biking-to-work-when-you-live-50-miles-away
 title: Biking to Work (when you live 50 miles away)

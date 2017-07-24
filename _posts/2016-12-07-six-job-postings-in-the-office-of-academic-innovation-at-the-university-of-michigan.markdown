@@ -2,7 +2,8 @@
 author: christeplovs
 comments: true
 date: 2016-12-07 19:45:22+00:00
-layout: post
+layout: single
+link: https://christeplovs.wordpress.com/2016/12/07/six-job-postings-in-the-office-of-academic-innovation-at-the-university-of-michigan/
 slug: six-job-postings-in-the-office-of-academic-innovation-at-the-university-of-michigan
 title: Six Job Postings in the Office of Academic Innovation at the University of
   Michigan
