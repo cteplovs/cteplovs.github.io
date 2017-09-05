@@ -13,7 +13,10 @@ The correct answer is int(a)
 
 3) Which of the following is a valid dictionary in Python?
 
-myExample = {'someItem': 2, 'otherItem': 20} (notice the curly brackets and colons)
+```python
+myExample = {'someItem': 2, 'otherItem': 20}
+```
+ (notice the curly brackets and colons)
 
 4) What will you see if you execute: 
 ```python
